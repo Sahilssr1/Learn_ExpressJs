@@ -1,7 +1,7 @@
 {
   "name": "learn_expressjs",
   "version": "1.0.0",
-  "description": "Learn",
+  "description": "Comprehensive Express.js learning repository covering core concepts, routing, parameters, query strings, and modern CSS styling with Nodemon workflow.",
   "homepage": "https://github.com/Sahilssr1/Learn_ExpressJs#readme",
   "bugs": {
     "url": "https://github.com/Sahilssr1/Learn_ExpressJs/issues"
@@ -13,11 +13,22 @@
   "license": "ISC",
   "author": "sahil",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "01_index.js",
   "scripts": {
+    "start": "node 01_index.js",
+    "dev": "nodemon 01_index.js",
+    "dev:01": "nodemon 01_index.js",
+    "dev:02": "nodemon 02_handling_request.js",
+    "dev:03": "nodemon 03_send_response.js",
+    "dev:04": "nodemon 04_routing.js",
+    "dev:05": "nodemon 05_path_parameter.js",
+    "dev:06": "nodemon 06_query_string.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
