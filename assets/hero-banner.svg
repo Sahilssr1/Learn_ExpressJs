@@ -107,7 +107,7 @@
 
   <!-- Subtitle -->
   <text x="60" y="152" class="subtitle">
-    Core Routing &bull; Dynamic Parameters &bull; Nodemon Live Reload &bull; Modern CSS Responses
+    Core Routing &#8226; Dynamic Parameters &#8226; Nodemon Live Reload &#8226; Modern CSS Responses
   </text>
 
   <!-- Interactive Badges Section at Bottom -->

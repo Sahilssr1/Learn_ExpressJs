@@ -3,7 +3,7 @@
 <!-- ANIMATED HERO BANNER -->
 <img src="assets/hero-banner.svg" alt="Learn Express.js Hero Banner" width="100%" />
 
-<br/><br/>
+<br/>
 
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-5.x-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
@@ -11,16 +11,39 @@
 [![Modern CSS](https://img.shields.io/badge/Modern%20CSS-Glassmorphism%20%26%20Gradients-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg?style=for-the-badge)](https://opensource.org/licenses/ISC)
 
-<p align="center">
+<br/>
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=38bdf8&center=true&vCenter=true&width=435&lines=Learn+Express.js+step+by+step;Routing%2C+params+%26+queries;With+Nodemon+live+reload)](https://git.io/typing-svg)
+
+<p>
   <b>The friendliest, most visual hands-on guide to mastering Express.js from scratch.</b><br>
   No confusing jargon. Real-life analogies, animated diagrams, modern CSS responses, and instant live reload with <b>Nodemon</b>.
 </p>
 
-[⚡ Quick Start](#-quick-start) • [🎡 Request Cycle (Animation)](#-animated-request--response-lifecycle) • [🔄 Nodemon (Animation)](#-animated-nodemon-guide) • [📚 Easy Lessons](#-easy-curriculum-breakdown) • [📊 Params vs Query](#-params-vs-query-strings-visual-guide)
+[⚡ Quick Start](#-quick-start) • [🎡 Request Cycle](#-animated-request--response-lifecycle) • [🔄 Nodemon](#-animated-nodemon-guide) • [📚 Lessons](#-easy-curriculum-breakdown) • [📊 Params vs Query](#-params-vs-query-strings-visual-guide)
+
+</div>
 
 ---
 
-</div>
+## ⚡ Quick Start
+
+### 1. Clone & Install
+```bash
+git clone https://github.com/Sahilssr1/Learn_ExpressJs.git
+cd Learn_ExpressJs
+npm install
+```
+
+### 2. Run with Live Reload
+```bash
+# Run any lesson
+npm run dev:01
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser. Any change you save will automatically refresh!
+
+---
 
 ## 🧠 Express.js Explained in Plain English (Real-Life Analogy)
 
@@ -54,7 +77,7 @@ Here is exactly how a request travels back and forth when you visit an Express U
 
 ---
 
-## ⚡ Animated Nodemon Guide
+## 🔄 Animated Nodemon Guide
 
 ### 😫 Without Nodemon (The Old Painful Way)
 Every time you changed 1 line of code:
@@ -95,6 +118,9 @@ npm run dev:06    # Lesson 06 - Query Strings (?q=...)
   "restartable": "rs",
   "ignore": [".git", "node_modules/**/node_modules"],
   "verbose": true,
+  "execMap": {
+    "js": "node"
+  },
   "watch": ["*.js"],
   "ext": "js,json,html,css",
   "delay": 300
@@ -195,16 +221,6 @@ app.use((req, res) => {
 
 ---
 
-## 📊 Params vs. Query Strings (Visual Guide)
-
-This visual infographic shows you exactly when to use **Path Parameters** vs. **Query Strings**:
-
-<div align="center">
-  <img src="assets/params-vs-query.svg" alt="Path Parameters vs Query Strings" width="100%" />
-</div>
-
----
-
 ### 🟢 Lesson 05: Dynamic Path Parameters (`05_path_parameter.js`)
 
 **Goal**: Read dynamic variables directly from the URL path using colons (`:username`, `:id`).
@@ -231,12 +247,12 @@ app.get("/:username/:id", (req, res) => {
 ```javascript
 app.get("/search", (req, res) => {
     const { q } = req.query;
-    
+
     // Safety check if user didn't type anything
     if (!q) {
         return res.send("⚠️ Nothing searched! Please provide ?q=value");
     }
-    
+
     res.send(`🔍 Search results for: ${q}`);
 });
 ```
@@ -246,6 +262,16 @@ app.get("/search", (req, res) => {
   * Interactive Search Home: [http://localhost:3000/](http://localhost:3000/)
   * Direct Query: [http://localhost:3000/search?q=express](http://localhost:3000/search?q=express)
   * Missing Query Test: [http://localhost:3000/search](http://localhost:3000/search)
+
+---
+
+## 📊 Params vs. Query Strings (Visual Guide)
+
+This visual infographic shows you exactly when to use **Path Parameters** vs. **Query Strings**:
+
+<div align="center">
+  <img src="assets/params-vs-query.svg" alt="Path Parameters vs Query Strings" width="100%" />
+</div>
 
 ---
 
@@ -263,22 +289,13 @@ Here is what was missing or broken in the starter code and how it was fixed:
 
 ---
 
-## ⚡ Quick Start
+## 🛠️ Built With
 
-### 1. Clone & Install
-```bash
-git clone https://github.com/Sahilssr1/Learn_ExpressJs.git
-cd Learn_ExpressJs
-npm install
-```
+<div align="center">
 
-### 2. Run with Live Reload
-```bash
-# Run any lesson
-npm run dev:01
-```
+<img src="https://skillicons.dev/icons?i=nodejs,express,javascript" alt="Node.js, Express.js and JavaScript" />
 
-Open [http://localhost:3000](http://localhost:3000) in your browser. Any change you save will automatically refresh!
+</div>
 
 ---
 
@@ -287,3 +304,9 @@ Open [http://localhost:3000](http://localhost:3000) in your browser. Any change 
 * **Created by**: **Sahil** ([@Sahilssr1](https://github.com/Sahilssr1))
 * **License**: [ISC](https://opensource.org/licenses/ISC)
 * Feel free to star ⭐ this repository if it helped you learn Express.js!
+
+<div align="center">
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=0f172a&height=120&section=footer)
+
+</div>

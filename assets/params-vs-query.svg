@@ -46,7 +46,7 @@
 
     <!-- Extraction Box -->
     <rect x="20" y="110" width="330" height="42" rx="8" fill="#1e293b" />
-    <text x="30" y="134" fill="#a5b4fc" class="code-pill">req.params &rarr; { user, id }</text>
+    <text x="30" y="134" fill="#a5b4fc" class="code-pill">req.params &#8594; { user, id }</text>
 
     <!-- Description -->
     <text x="20" y="175" class="card-desc">📍 Part of the URL route structure itself.</text>
@@ -71,7 +71,7 @@
 
     <!-- Extraction Box -->
     <rect x="20" y="110" width="330" height="42" rx="8" fill="#1e293b" />
-    <text x="30" y="134" fill="#38bdf8" class="code-pill">req.query &rarr; { q, page }</text>
+    <text x="30" y="134" fill="#38bdf8" class="code-pill">req.query &#8594; { q, page }</text>
 
     <!-- Description -->
     <text x="20" y="175" class="card-desc">🔍 Starts with <tspan fill="#38bdf8">?</tspan> and chained with <tspan fill="#38bdf8">&amp;</tspan>.</text>
