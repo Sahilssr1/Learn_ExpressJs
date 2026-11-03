@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 330" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <linearGradient id="purpleGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .header { font-family: system-ui, sans-serif; font-size: 18px; font-weight: 800; fill: #f8fafc; }
+    .card-title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: 800; }
+    .card-desc { font-family: system-ui, sans-serif; font-size: 13px; fill: #94a3b8; line-height: 1.4; }
+    .url-font { font-family: monospace; font-size: 13px; font-weight: 600; }
+    .code-pill { font-family: monospace; font-size: 12px; font-weight: 700; }
+  </style>
+
+  <rect x="2" y="2" width="856" height="326" rx="16" fill="url(#bg)" stroke="#334155" stroke-width="1.5" />
+
+  <text x="40" y="38" class="header">VISUAL CHEAT SHEET: PATH PARAMETERS VS. QUERY STRINGS</text>
+  <text x="590" y="38" font-family="system-ui, sans-serif" font-size="12px" fill="#64748b">Understand the Difference Instantly</text>
+
+  <!-- ================= LEFT CARD: PATH PARAMETERS ================= -->
+  <g transform="translate(40, 60)">
+    <rect width="370" height="240" rx="14" fill="#0b0f19" stroke="#818cf8" stroke-width="1.5" />
+    
+    <!-- Title Pill -->
+    <rect x="20" y="18" width="180" height="26" rx="6" fill="#1e1b4b" stroke="#818cf8" stroke-width="1" />
+    <text x="32" y="35" fill="#a5b4fc" class="card-title">1. Path Parameters</text>
+
+    <!-- URL Box -->
+    <rect x="20" y="58" width="330" height="40" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+    <text x="30" y="82" fill="#64748b" class="url-font">http://localhost:3000/</text>
+    <text x="210" y="82" fill="#818cf8" class="url-font">:user</text>
+    <text x="255" y="82" fill="#64748b" class="url-font">/</text>
+    <text x="268" y="82" fill="#c084fc" class="url-font">:id</text>
+
+    <!-- Extraction Box -->
+    <rect x="20" y="110" width="330" height="42" rx="8" fill="#1e293b" />
+    <text x="30" y="134" fill="#a5b4fc" class="code-pill">req.params &rarr; { user, id }</text>
+
+    <!-- Description -->
+    <text x="20" y="175" class="card-desc">📍 Part of the URL route structure itself.</text>
+    <text x="20" y="198" class="card-desc">🎯 Best for identifying a specific resource.</text>
+    <text x="20" y="221" class="card-desc">💡 Example: <tspan fill="#a5b4fc">/sahil/101</tspan> (User @sahil with ID 101)</text>
+  </g>
+
+  <!-- ================= RIGHT CARD: QUERY STRINGS ================= -->
+  <g transform="translate(450, 60)">
+    <rect width="370" height="240" rx="14" fill="#0b0f19" stroke="#38bdf8" stroke-width="1.5" />
+    
+    <!-- Title Pill -->
+    <rect x="20" y="18" width="160" height="26" rx="6" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1" />
+    <text x="32" y="35" fill="#38bdf8" class="card-title">2. Query Strings</text>
+
+    <!-- URL Box -->
+    <rect x="20" y="58" width="330" height="40" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+    <text x="30" y="82" fill="#64748b" class="url-font">/search?</text>
+    <text x="96" y="82" fill="#38bdf8" class="url-font">q=express</text>
+    <text x="175" y="82" fill="#64748b" class="url-font">&amp;</text>
+    <text x="188" y="82" fill="#34d399" class="url-font">page=2</text>
+
+    <!-- Extraction Box -->
+    <rect x="20" y="110" width="330" height="42" rx="8" fill="#1e293b" />
+    <text x="30" y="134" fill="#38bdf8" class="code-pill">req.query &rarr; { q, page }</text>
+
+    <!-- Description -->
+    <text x="20" y="175" class="card-desc">🔍 Starts with <tspan fill="#38bdf8">?</tspan> and chained with <tspan fill="#38bdf8">&amp;</tspan>.</text>
+    <text x="20" y="198" class="card-desc">🎯 Best for filtering, searching, or pagination.</text>
+    <text x="20" y="221" class="card-desc">💡 Example: <tspan fill="#38bdf8">/search?q=javascript</tspan></text>
+  </g>
+</svg>
+

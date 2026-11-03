@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="boxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <linearGradient id="laserGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <filter id="laserGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .node-title {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      fill: #f8fafc;
+    }
+    .node-sub {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 12px;
+      fill: #94a3b8;
+    }
+    .badge-code {
+      font-family: monospace;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    @keyframes movePacketRight {
+      0% { cx: 240px; opacity: 0; }
+      15% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { cx: 620px; opacity: 0; }
+    }
+    @keyframes movePacketLeft {
+      0% { cx: 620px; opacity: 0; }
+      15% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { cx: 240px; opacity: 0; }
+    }
+    .req-packet {
+      animation: movePacketRight 3s ease-in-out infinite;
+    }
+    .res-packet {
+      animation: movePacketLeft 3s ease-in-out infinite;
+      animation-delay: 1.5s;
+    }
+  </style>
+
+  <!-- Container Box -->
+  <rect x="2" y="2" width="856" height="296" rx="16" fill="url(#boxGradient)" stroke="#334155" stroke-width="1.5" />
+
+  <!-- Top Title -->
+  <text x="40" y="42" font-family="system-ui, sans-serif" font-size="18px" font-weight="800" fill="#38bdf8">
+    EXPRESS.JS REQUEST &amp; RESPONSE LIFECYCLE
+  </text>
+  <text x="530" y="42" font-family="system-ui, sans-serif" font-size="12px" fill="#64748b">
+    Full Round-Trip Communication
+  </text>
+
+  <!-- Connecting Lines -->
+  <!-- Top line: Request (Blue) -->
+  <line x1="240" y1="125" x2="620" y2="125" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6,4" />
+  <!-- Bottom line: Response (Pink) -->
+  <line x1="240" y1="185" x2="620" y2="185" stroke="#ec4899" stroke-width="2.5" stroke-dasharray="6,4" />
+
+  <!-- Animated Flying Packets -->
+  <!-- Request Packet moving right -->
+  <circle cy="125" r="7" fill="#38bdf8" filter="url(#laserGlow)" class="req-packet" />
+  <!-- Response Packet moving left -->
+  <circle cy="185" r="7" fill="#ec4899" filter="url(#laserGlow)" class="res-packet" />
+
+  <!-- Path Labels in Middle -->
+  <g transform="translate(360, 102)">
+    <rect width="140" height="22" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1" />
+    <text x="14" y="15" fill="#38bdf8" class="badge-code">GET /apple (req)</text>
+  </g>
+
+  <g transform="translate(360, 185)">
+    <rect width="140" height="22" rx="6" fill="#0f172a" stroke="#ec4899" stroke-width="1" />
+    <text x="12" y="15" fill="#f472b6" class="badge-code">res.send(HTML)</text>
+  </g>
+
+  <!-- ================= LEFT: CLIENT / BROWSER ================= -->
+  <g transform="translate(40, 75)">
+    <rect width="200" height="175" rx="14" fill="#0b0f19" stroke="#38bdf8" stroke-width="1.5" />
+    <rect x="25" y="25" width="150" height="80" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <!-- Browser Mock Controls -->
+    <circle cx="40" cy="38" r="4" fill="#ef4444" />
+    <circle cx="52" cy="38" r="4" fill="#f59e0b" />
+    <circle cx="64" cy="38" r="4" fill="#10b981" />
+    <rect x="75" y="32" width="90" height="12" rx="3" fill="#0f172a" />
+    
+    <text x="40" y="70" font-family="monospace" font-size="10px" fill="#94a3b8">localhost:3000</text>
+    
+    <text x="65" y="132" class="node-title">CLIENT</text>
+    <text x="45" y="152" class="node-sub">Web Browser / App</text>
+  </g>
+
+  <!-- ================= RIGHT: EXPRESS SERVER ================= -->
+  <g transform="translate(620, 75)">
+    <rect width="200" height="175" rx="14" fill="#0b0f19" stroke="#ec4899" stroke-width="1.5" />
+    <!-- Server Stack Mock -->
+    <rect x="25" y="20" width="150" height="24" rx="5" fill="#1e293b" stroke="#ec4899" stroke-width="1" />
+    <text x="45" y="36" font-family="monospace" font-size="11px" fill="#f472b6">app.use()</text>
+    
+    <rect x="25" y="48" width="150" height="24" rx="5" fill="#1e293b" stroke="#818cf8" stroke-width="1" />
+    <text x="35" y="64" font-family="monospace" font-size="11px" fill="#a5b4fc">app.get('/apple')</text>
+    
+    <rect x="25" y="76" width="150" height="24" rx="5" fill="#1e293b" stroke="#10b981" stroke-width="1" />
+    <text x="45" y="92" font-family="monospace" font-size="11px" fill="#34d399">res.send()</text>
+
+    <text x="35" y="132" class="node-title">EXPRESS SERVER</text>
+    <text x="50" y="152" class="node-sub">Node.js Port 3000</text>
+  </g>
+</svg>
+

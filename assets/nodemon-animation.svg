@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <linearGradient id="neonGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+
+    <linearGradient id="pulseLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#34d399" stop-opacity="1">
+        <animate attributeName="stop-color" values="#34d399; #38bdf8; #818cf8; #34d399" dur="3s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.2" />
+    </linearGradient>
+
+    <filter id="greenGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .step-title {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      fill: #f8fafc;
+    }
+    .step-desc {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      fill: #94a3b8;
+    }
+    .header-text {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      fill: #34d399;
+    }
+    @keyframes spinWheel {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes dashTravel {
+      to { stroke-dashoffset: -40; }
+    }
+    .rotating-icon {
+      transform-origin: 430px 180px;
+      animation: spinWheel 4s linear infinite;
+    }
+    .data-flow {
+      stroke-dasharray: 8, 8;
+      animation: dashTravel 1.5s linear infinite;
+    }
+  </style>
+
+  <!-- Container Box -->
+  <rect x="2" y="2" width="856" height="316" rx="16" fill="url(#cardBg)" stroke="#334155" stroke-width="1.5" />
+
+  <!-- Header Banner -->
+  <g transform="translate(40, 36)">
+    <circle cx="12" cy="12" r="8" fill="#10b981" filter="url(#greenGlow)">
+      <animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="32" y="18" class="header-text">HOW NODEMON WORKS IN REAL-TIME</text>
+    <text x="540" y="18" font-family="system-ui, sans-serif" font-size="12px" fill="#64748b">Zero Manual Restarts Required</text>
+  </g>
+
+  <!-- Connecting Animated Laser Lines -->
+  <!-- Step 1 to Step 2 -->
+  <line x1="220" y1="180" x2="350" y2="180" stroke="#34d399" stroke-width="3" class="data-flow" />
+
+  <!-- Step 2 to Step 3 -->
+  <line x1="510" y1="180" x2="640" y2="180" stroke="#38bdf8" stroke-width="3" class="data-flow" />
+
+  <!-- ==================== STEP 1: CODE SAVE ==================== -->
+  <g transform="translate(40, 90)">
+    <rect width="180" height="180" rx="14" fill="#0b0f19" stroke="#334155" stroke-width="1.2" />
+    <!-- Icon: Code File / Edit -->
+    <rect x="65" y="25" width="50" height="55" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+    <line x1="75" y1="40" x2="105" y2="40" stroke="#38bdf8" stroke-width="2" />
+    <line x1="75" y1="50" x2="98" y2="50" stroke="#94a3b8" stroke-width="2" />
+    <line x1="75" y1="60" x2="102" y2="60" stroke="#94a3b8" stroke-width="2" />
+    
+    <!-- Action Tag -->
+    <rect x="35" y="92" width="110" height="24" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="0.8" />
+    <text x="44" y="108" font-family="monospace" font-size="11px" fill="#38bdf8">Ctrl + S (Save)</text>
+
+    <text x="30" y="136" class="step-title">1. Code Change</text>
+    <text x="18" y="156" class="step-desc">Developer edits .js file</text>
+  </g>
+
+  <!-- ==================== STEP 2: NODEMON WATCHER (CENTER) ==================== -->
+  <g transform="translate(350, 90)">
+    <rect width="160" height="180" rx="14" fill="#0b0f19" stroke="#10b981" stroke-width="1.5" />
+    
+    <!-- Animated Spinning Wheel Indicator -->
+    <g class="rotating-icon">
+      <circle cx="430" cy="145" r="32" fill="none" stroke="#1e293b" stroke-width="6" />
+      <path d="M 430 113 A 32 32 0 0 1 462 145" fill="none" stroke="#10b981" stroke-width="6" stroke-linecap="round" />
+      <path d="M 430 177 A 32 32 0 0 1 398 145" fill="none" stroke="#34d399" stroke-width="6" stroke-linecap="round" />
+    </g>
+
+    <!-- Center Icon Symbol -->
+    <text x="70" y="60" font-family="system-ui, sans-serif" font-size="20px">⚡</text>
+
+    <!-- Status Badge -->
+    <rect x="25" y="92" width="110" height="24" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="0.8" />
+    <text x="34" y="108" font-family="system-ui, sans-serif" font-size="11px" font-weight="700" fill="#34d399">Nodemon Detects</text>
+
+    <text x="18" y="136" class="step-title">2. Auto-Restart</text>
+    <text x="14" y="156" class="step-desc">Reboots app in &lt;100ms</text>
+  </g>
+
+  <!-- ==================== STEP 3: LIVE SERVER / BROWSER ==================== -->
+  <g transform="translate(640, 90)">
+    <rect width="180" height="180" rx="14" fill="#0b0f19" stroke="#334155" stroke-width="1.2" />
+    <!-- Icon: Server & Screen -->
+    <rect x="55" y="25" width="70" height="48" rx="6" fill="#1e293b" stroke="#818cf8" stroke-width="1.5" />
+    <circle cx="70" cy="62" r="3" fill="#10b981" />
+    <circle cx="80" cy="62" r="3" fill="#38bdf8" />
+    <line x1="65" y1="40" x2="115" y2="40" stroke="#818cf8" stroke-width="2" />
+    <line x1="65" y1="48" x2="100" y2="48" stroke="#64748b" stroke-width="1.5" />
+
+    <!-- Status Tag -->
+    <rect x="35" y="92" width="110" height="24" rx="6" fill="#1e293b" stroke="#818cf8" stroke-width="0.8" />
+    <text x="44" y="108" font-family="monospace" font-size="11px" fill="#818cf8">Port 3000 Live</text>
+
+    <text x="30" y="136" class="step-title">3. Instant Output</text>
+    <text x="22" y="156" class="step-desc">Browser sees updates</text>
+  </g>
+</svg>
+
