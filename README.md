@@ -1,7 +1,7 @@
 <div align="center">
 
-<!-- ANIMATED HERO BANNER -->
-<img src="assets/hero-banner.svg?v=2" alt="Learn Express.js Hero Banner" width="100%" />
+<!-- PROFESSIONAL HEADER -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0f172a&height=220&section=header&text=Learn%20Express.js&fontSize=65&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Backend%20Development%20%E2%80%A2%20Routing%20%E2%80%A2%20Nodemon&descSize=18&descAlignY=62" alt="Learn Express.js" width="100%" />
 
 <br/>
 
