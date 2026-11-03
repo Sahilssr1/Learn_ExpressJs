@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- ANIMATED HERO BANNER -->
-<img src="assets/hero-banner.svg" alt="Learn Express.js Hero Banner" width="100%" />
+<img src="assets/hero-banner.svg?v=2" alt="Learn Express.js Hero Banner" width="100%" />
 
 <br/>
 
@@ -270,7 +270,7 @@ app.get("/search", (req, res) => {
 This visual infographic shows you exactly when to use **Path Parameters** vs. **Query Strings**:
 
 <div align="center">
-  <img src="assets/params-vs-query.svg" alt="Path Parameters vs Query Strings" width="100%" />
+  <img src="assets/params-vs-query.svg?v=2" alt="Path Parameters vs Query Strings" width="100%" />
 </div>
 
 ---
